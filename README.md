@@ -26,6 +26,8 @@ https://github.com/jokubasver/Kobra_Neo/releases
 Copy firmware.bin to your microSD card, insert the card with the printer off, turn printer on and wait until you get to the home screen. Afterwards, delete the firmware.bin file from your card.
 
 ## Before printing
+After flashing, I recommend to backup and reset your EEPROM (using the EEPROM Editor plugin in Octoprint), as I found that even after changing some values in the firmware, the printer still used the old values saved in EEPROM.
+
 Perform a PID autotune and calibrate your e-steps! This firmware contains values for my own printer, but even the stock firmware does not have great values. 
 
 Even after doing all the hardware and mechanical touch-ups, I was not getting great prints. This was solved by calibrating E-steps, as they were quite off (instead of extruding 100mm of filament, my printer extruded 95mm before calibration), so make sure you do that as well.
