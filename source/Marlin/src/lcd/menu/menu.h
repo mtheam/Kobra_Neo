@@ -31,7 +31,7 @@
 
 
 #define DEVICE_NAME             "Anycubic Kobra Neo"
-#define FIRMWARE_VER            "V1.3.3-jokubasver-v1.1"
+#define FIRMWARE_VER            "V1.3.3-jokubasver-v1.2"
 #define BUILD_VOLUME            "220*220*250 (mm)"
 #define TECH_SUPPORT            "github.com/jokubasver"
 

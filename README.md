@@ -4,11 +4,12 @@
 - Increased default extruder max feedrate from 25 to 50 (now retraction speed is not limited to 25mm/s)
 - X and Y default max acceleration increased from 500 to 1000
 - Default X and Y jerk increased from 5 to 8
+- Enabled extra menu items (Leveling->Edit Mesh + Bed Tramming, Configuration->Controller Fan, Advanced Settings, etc...)
 - Enabled "Host Actions" and "Host Action Prompts" with support for the printer UI (allows starting/pausing/resuming of Octoprint prints)
 - Increased probing accuracy by doing multiple probes per point
 - Increased speed for the first Z-probe approach when double-probing
 - Enabled quick home (X and Y homes at the same time)
-- ~~Set default mainboard fan speed to 5 instead of 255~~ (reverted for now as I had a few "Heater_ID: 0 - Printer halted" errors)
+- ~~Set default mainboard fan speed to 5 instead of 255~~ (reverted as I had a few "Heater_ID: 0 - Printer halted" errors, if you'd like to experiment with mainboard fan speed, use the menu item Configuration->Controller Fan)
 - Enable M117 Gcode for setting messages to printer screen
 - Enable M73 Gcode for setting progress bar on printer screen
 - UI changes - black background, removed ugly yellow text color, fixed typos
@@ -34,7 +35,8 @@ Even after doing all the hardware and mechanical touch-ups, I was not getting gr
 
 Instructions can be found here:
 
-PID Autotune: https://teachingtechyt.github.io/calibration.html#pid
+PID Autotune: Go to Menu->Configuration->Advanced Settings->Temperature, select PID Autotune E1, and set your printing temperature. Do the same for PID Autotune Bed. Now go way back to the Configuration menu and select Store Settings.
+If you'd like to perform PID Autotune using Octoprint or Pronterface, follow: https://teachingtechyt.github.io/calibration.html#pid
 
 E-Step calibration: https://teachingtechyt.github.io/calibration.html#esteps
 
