@@ -1,4 +1,4 @@
-#### Modified Anycubic Kobra Neo V1.33 Firmware
+## Modified Anycubic Kobra Neo V1.33 Firmware
 
 ## Features
 - Increased default extruder max feedrate from 25 to 50 (now retraction speed is not limited to 25mm/s)
@@ -26,26 +26,41 @@ https://github.com/jokubasver/Kobra_Neo/releases
 ## Flashing
 Copy firmware.bin to your microSD card, insert the card with the printer off, turn printer on and wait until you get to the home screen. Afterwards, delete the firmware.bin file from your card.
 
-## Before printing
-After flashing, I recommend to reset your EEPROM (Menu->Configuration->Advanced Configuration->Initiliaze EEPROM); or by using Prontercace/Octoprint: send M502 and M500; or by using the EEPROM Editor plugin in Octoprint), as I found that even after changing some values in the firmware, the printer still used the old values saved in EEPROM.
+# (IMPORTANT) Before printing
+## Reset EEPROM
+After flashing, I recommend to reset your EEPROM, as I found that even after changing some values in the firmware, the printer still used the old values saved in EEPROM.
 
-Perform a PID autotune and calibrate your e-steps! This firmware contains values for my own printer, but even the stock firmware does not have great values. 
+Ways to reset EEPROM:
+- Menu->Configuration->Advanced Configuration->Initiliaze EEPROM; 
+- Using Prontercace/Octoprint: send M502 and M500;
+- Use the EEPROM Editor plugin in Octoprint
+
+
+## Perform a PID autotune and calibrate your e-steps!
+This firmware contains values for my own printer, but even the stock firmware does not have great values. 
 
 Even after doing all the hardware and mechanical touch-ups, I was not getting great prints. This was solved by calibrating E-steps, as they were quite off (instead of extruding 100mm of filament, my printer extruded 95mm before calibration), so make sure you do that as well.
 
-Instructions can be found here:
+## PID Autotune using the menu:
 
-PID Autotune: Go to Menu->Configuration->Advanced Settings->Temperature, select PID Autotune E1, and set your printing temperature. Do the same for PID Autotune Bed. Now go way back to the Configuration menu and select Store Settings.
+- PID Autotune: Go to Menu->Configuration->Advanced Settings->Temperature
+- select PID Autotune E1, and set your printing temperature. Wait for the Autotune to complete.
+- Now do the same for PID Autotune Bed. 
+- Go way back to the Configuration menu and select Store Settings.
+
+## PID Autotune using Pronterface/Octoprint
 If you'd like to perform PID Autotune using Octoprint or Pronterface, follow: https://teachingtechyt.github.io/calibration.html#pid
 
-E-Step calibration: https://teachingtechyt.github.io/calibration.html#esteps
+## E-Step Calibration
+To perform E-Step calibration, I reccomend to follow this guide: https://teachingtechyt.github.io/calibration.html#esteps
 
+## (Optional) Include your PID and E-step values to firmware
 If you are building the firmware yourself, you can include your personal PID and E-step values in the firmware's Configuration.h file: https://github.com/jokubasver/Kobra_Neo/commit/a33ebd921d4031b541fb395de72f8292334ff8a0
 
 Having these values saved in the firmware itself could save a lot of headaches, as If the EEPROM for whatever reason was to clear, your values will not dissapear.
 
 
-## Building
+# Building
 https://www.reddit.com/r/anycubic/comments/y2waxu/tutorial_how_to_build_anycubic_marlin_source_code/
 
 ## Based on
