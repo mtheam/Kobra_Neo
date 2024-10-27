@@ -1033,7 +1033,7 @@
 #define XY_PROBE_SPEED (200*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_SPEED_FAST (8*60)
+#define Z_PROBE_SPEED_FAST (4*60)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
@@ -1045,7 +1045,7 @@
  */
 //#define PROBE_ACTIVATION_SWITCH
 #if ENABLED(PROBE_ACTIVATION_SWITCH)
-  #define PROBE_ACTIVATION_SWITCH_STATE LOW // State indicating probe is active
+  #define PROBE_ACTIVATION_SWITCH_STATE LOW     // State indicating probe is active
   //#define PROBE_ACTIVATION_SWITCH_PIN PC6 // Override default pin
 #endif
 
@@ -1096,10 +1096,10 @@
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
 
-#define Z_PROBE_LOW_POINT          -10 // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT          -5 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
-#define Z_PROBE_OFFSET_RANGE_MIN -15
+#define Z_PROBE_OFFSET_RANGE_MIN -10
 #define Z_PROBE_OFFSET_RANGE_MAX 10
 
 // Enable the M48 repeatability test to test probe accuracy
